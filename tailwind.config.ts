@@ -7,12 +7,42 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "480px",
+      md: "768px",
+      lg: "976px",
+      xl: "1400px",
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        sectionColor: "hsl(209, 100%, 97%)",
+        darkBodyColor: "hsl(216, 100%, 4%)",
+        darkSectionColor: "hsl(211, 100%, 12%)",
+        primaryColor: "hsl(209, 87%, 21%)",
+        primaryColorLight: "hsl(209, 74%, 45%)",
+        whiteColor: "#fff",
+        textColor: "#DDD",
+        secondaryColor: "red"
       },
+      keyframes: {
+        move: {
+          "50%": { transform: "scale(1.1)" }
+        }
+      },
+      animation: {
+        scaleAnimation: "move 3s linear infinite"
+      }
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "10px",
+        md: "30px",
+      },
+    },
+    fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
+      Londrina: ["Londrina Outline", "sans-serif"],
     },
   },
   plugins: [],
