@@ -5,14 +5,14 @@ export default function Contact() {
     return (<>
         <div id="contact" className="bg-gray-50 py-20">
             <div className="container-fluid mx-auto">
-                <div className="flex flex-col lg:flex-row  px-2 md:px-0">
-                    <div className="w-full lg:w-1/3 bg-indigo-600 rounded-tl rounded-bl rounded-tr p-6">
-                        <h1 className="xl:text-4xl text-3xl pb-4 text-white font-bold mt-3">Get in touch</h1>
-                        <p className="text-xl text-white pb-8 leading-relaxed font-normal lg:pr-4">
+                <div className="flex flex-col lg:flex-row  px-2 md:px-0 shadow-md shadow-gray-100">
+                    <div className="w-full lg:w-1/3 bg-indigo-500  rounded-tl rounded-bl rounded-tr p-6">
+                        <h1 className="xl:text-4xl text-3xl pb-4 text-white font-bold mt-4">Get in touch</h1>
+                        <p className="text-xl text-white pb-10 leading-relaxed font-normal lg:pr-4">
                             I provide front-end support with expertise in HTML5, CSS3, JavaScript ES6, TypeScript, Bootstrap, Tailwindcss, ShadcnUi, DaisyUi ReactJS, and NextJS. 🚀 Proficient in responsive design, I'm here to assist you!
                         </p>
                         <div className="space-y-4">
-                            <div className="flex pb-4 items-center">
+                            <div className="flex items-center">
                                 <div className="text-white">
                                     <MdPhoneInTalk />
                                 </div>
