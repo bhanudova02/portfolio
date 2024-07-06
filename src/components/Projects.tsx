@@ -26,7 +26,7 @@ export default function Projects() {
         {
             imgSrc: "/project_one.png",
             title: "Project Five",
-            Link: "https://ui-components-theta.vercel.app"
+            Link: "https://ui-components-sooty.vercel.app/"
         }
     ]
     return (<>
