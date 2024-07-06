@@ -5,8 +5,6 @@ import my_pic from "../../public/my_pic.jpg";
 import Link from "next/link";
 import { FaGithub, FaInstagram, FaTelegram, FaWhatsapp } from "react-icons/fa";
 import { IoShareSocialSharp } from "react-icons/io5";
-import { BsFacebook } from "react-icons/bs";
-// import Resume from "../../public/Resume.pdf"
 export default function About() {
     return (<>
         <div id="about" className="container-fluid mx-auto py-20">
@@ -17,10 +15,7 @@ export default function About() {
                 </div>
 
                 <div className="flex flex-col md:flex-row gap-2 h-full lg:h-[350px] mt-8">
-                    <div className="p-2 w-full lg:w-[30%] block md:hidden lg:block">
-                        <Image src={my_pic} width={600} height={600} alt="my_pic" className="w-full h-full object-cover rounded-md shadow-xl" />
-                    </div>
-                    <div className="p-2 w-full lg:w-[70%]">
+                    <div className="p-2 w-full">
                         <div className="flex flex-col lg:flex-row items-center text-center gap-4">
                             <div className="border p-4 w-full lg:w-[30%] rounded-md">
                                 <span className="flex justify-center items-center"><SlBadge size={25} className="text-black" /></span>
@@ -47,9 +42,9 @@ export default function About() {
                                 <h2 className="font-bold text-xl mb-4">Social Media</h2>
                                 <div className="grid grid-cols-4 gap-6">
                                     <div className="flex items-center justify-center py-[6px]" ><Link href="https://github.com/bhanudova02" target="_blank"><FaGithub className="text-5xl hover:bg-gray-200 p-1 hover:cursor-pointer hover:rounded-full" /></Link></div>
-                                    <div className="flex items-center justify-center py-[6px]" ><Link href="https://www.instagram.com/mr._bhanu_03/" target="_blank"><FaInstagram className="text-5xl hover:bg-rose-400 p-1 hover:cursor-pointer hover:rounded-full" /></Link></div>
-                                    <div className="flex items-center justify-center py-[6px]" ><Link href="https://wa.me/+916302715653" target="_blank"><FaWhatsapp className="text-5xl hover:bg-blue-300 p-1 hover:cursor-pointer hover:rounded-full" /></Link></div>
-                                    <div className="flex items-center justify-center py-[6px]" ><Link href="https://t.me/NeverGiveUP_003" target="_blank"><FaTelegram className="text-5xl hover:bg-green-300 p-1 hover:cursor-pointer hover:rounded-full" /></Link></div>
+                                    <div className="flex items-center justify-center py-[6px]" ><Link href="https://www.instagram.com/mr._bhanu_03/" target="_blank"><FaInstagram className="text-5xl hover:bg-rose-200 p-1 hover:cursor-pointer hover:rounded-full" /></Link></div>
+                                    <div className="flex items-center justify-center py-[6px]" ><Link href="https://wa.me/+916302715653" target="_blank"><FaWhatsapp className="text-5xl hover:bg-green-200 p-1 hover:cursor-pointer hover:rounded-full" /></Link></div>
+                                    <div className="flex items-center justify-center py-[6px]" ><Link href="https://t.me/NeverGiveUP_003" target="_blank"><FaTelegram className="text-5xl hover:bg-blue-200 p-1 hover:cursor-pointer hover:rounded-full" /></Link></div>
                                 </div>
                             </div>
                         </div>
