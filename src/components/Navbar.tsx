@@ -32,8 +32,8 @@ const Navbar = () => {
     return (<>
         <div style={{ backgroundColor: `${color}`, boxShadow: `${scrollStyle}` }} className="fixed top-0 w-full  z-10 ease-in duration-300">
             <div className="container-fluid mx-auto">
-                <div className="flex justify-between items-center pt-5 pb-4">
-                    <h1><Link href="/" style={{ color: `${textColor}` }} className="font-bold text-4xl">
+                <div className="flex justify-between items-center pt-5 pb-4  px-2 md:px-0">
+                    <h1><Link href="/" style={{ color: `${textColor}` }} className="font-bold text-3xl md:text-4xl">
                         Web Developer
                     </Link></h1>
                     <ul style={{ color: `${textColor}` }} className="hidden md:flex gap-8">
