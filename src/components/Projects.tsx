@@ -6,17 +6,17 @@ export default function Projects() {
         {
             imgSrc: "/PSP_Project.png",
             title: "Project One",
-            Link: "https://plpl-seeds.vercel.app"
+            Link: "https://plpl-sedds.vercel.app/"
         },
         {
             imgSrc: "/PSP_ProjectTwo.png",
             title: "Project Two",
-            Link: "https://plpl-infotech.vercel.app"
+            Link: "https://office-site-ebon.vercel.app/"
         },
         {
             imgSrc: "/project_two.png",
             title: "Project Three",
-            Link: "https://carsproject-six.vercel.app"
+            Link: "https://blog-project-nine-pink.vercel.app/"
         },
         {
             imgSrc: "/UI_ComponentProject.png",
@@ -29,9 +29,6 @@ export default function Projects() {
             Link: "https://ui-components-theta.vercel.app"
         }
     ]
-
-
-
     return (<>
         <div className="container-fluid mx-auto py-20" id="project">
             <div>
