@@ -55,7 +55,7 @@ const Navbar = () => {
                     </ul>
                     {/* Mobile Button */}
                     <div onClick={handelNav} className="block md:hidden z-10">
-                        {nav ? <AiOutlineClose size={20} style={{ color: `${textColor}` }} /> : <AiOutlineMenu size={20} style={{ color: `${textColor}` }} />}
+                        {nav ? <AiOutlineClose size={20} style={{ color: `white` }} /> : <AiOutlineMenu size={20} style={{ color: `${textColor}` }} />}
                     </div>
                     {/* Mobile Menu */}
                     <div className={nav ? 'md:hidden absolute text-white top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300' : 'md:hidden text-white absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300'}>
