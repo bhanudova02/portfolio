@@ -17,7 +17,7 @@ export default function About() {
                 <div className="flex flex-col md:flex-row gap-2 h-full lg:h-[350px] mt-8">
                     <div className="p-2 w-full">
                         <div className="flex flex-col lg:flex-row items-center text-center gap-4">
-                            <div className="border p-4 w-full lg:w-[30%] rounded-md">
+                            <div className="border p-4 w-full lg:w-[30%] rounded-md shadow-md shadow-gray-200">
                                 <span className="flex justify-center items-center"><SlBadge size={25} className="text-black" /></span>
                                 <h2 className="font-bold text-xl">Experience</h2>
                                 <p className="text-gray-700 font-semibold mb-2">
@@ -27,7 +27,7 @@ export default function About() {
                                     <button className="p-2 border hover:bg-[#353535] rounded hover:text-white hover:rounded-md duration-500 font-semibold text-green-800">Download Resume</button>
                                 </Link>
                             </div>
-                            <div className="border p-4 w-full lg:w-[30%] rounded-md">
+                            <div className="border p-4 w-full lg:w-[30%] rounded-md shadow-md shadow-gray-200">
                                 <span className="flex justify-center items-center"><GiGraduateCap size={25} className="text-black" /></span>
                                 <h2 className="font-bold text-xl">Education</h2>
                                 <p className="text-gray-700 font-semibold mb-2">
@@ -37,7 +37,7 @@ export default function About() {
                                     <button className="p-2 border hover:bg-[#353535] rounded hover:text-white hover:rounded-md duration-500 font-semibold text-green-800">View Resume</button>
                                 </Link>
                             </div>
-                            <div className="border p-4 w-full lg:w-[30%] rounded-md">
+                            <div className="border p-4 w-full lg:w-[30%] rounded-md shadow-md shadow-gray-200">
                                 <span className="flex justify-center items-center"><IoShareSocialSharp size={25} className="text-black" /></span>
                                 <h2 className="font-bold text-xl mb-4">Social Media</h2>
                                 <div className="grid grid-cols-4 gap-6">
