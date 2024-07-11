@@ -21,7 +21,7 @@ export default function Projects() {
         {
             imgSrc: "/UI_ComponentProject.png",
             title: "Project Four",
-            Link: "https://ui-components-next-js.vercel.app"
+            Link: "https://ui-pages-delta.vercel.app"
         },
         {
             imgSrc: "/project_one.png",
