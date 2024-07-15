@@ -34,7 +34,7 @@ export default function Projects() {
             <div>
                 <div className="text-center">
                     <p>Browse My Recent</p>
-                    <h1 className="text-5xl font-bold">Projects</h1>
+                    <h1 className="text-3xl md:text-5xl font-bold">Projects</h1>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-6 px-2 md:px-0">
                     {

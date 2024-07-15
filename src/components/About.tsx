@@ -11,10 +11,10 @@ export default function About() {
             <div>
                 <div className="text-center">
                     <p>Get To Know More</p>
-                    <h2 className="font-extrabold text-5xl">About Me</h2>
+                    <h2 className="font-extrabold text-3xl md:text-5xl">About Me</h2>
                 </div>
 
-                <div className="flex flex-col md:flex-row gap-2 h-full lg:h-[350px] mt-8">
+                <div className="flex flex-col md:flex-row gap-2 h-full lg:h-[350px] mt-4 md:mt-8">
                     <div className="p-2 w-full">
                         <div className="flex flex-col lg:flex-row items-center text-center gap-4">
                             <div className="border p-4 w-full lg:w-[30%] rounded-md shadow-md shadow-gray-200">

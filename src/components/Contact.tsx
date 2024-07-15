@@ -7,8 +7,8 @@ export default function Contact() {
             <div className="container-fluid mx-auto">
                 <div className="flex gap-2 lg:gap-0 flex-col lg:flex-row  px-2 md:px-0 shadow-md shadow-gray-100">
                     <div className="w-full lg:w-1/3 bg-indigo-500  rounded-tr rounded-br  lg:rounded-tr-none lg:rounded-br-none rounded-tl rounded-bl  p-6">
-                        <h1 className="xl:text-4xl text-3xl pb-4 text-white font-bold mt-4">Get in touch</h1>
-                        <p className="text-xl text-white pb-10 leading-relaxed font-normal lg:pr-4">
+                        <h1 className="md:text-4xl text-2xl pb-4 text-white font-bold mt-4">Get in touch</h1>
+                        <p className="md:text-xl text-lg text-white pb-10 leading-relaxed font-normal lg:pr-4">
                             I provide front-end support with expertise in HTML5, CSS3, JavaScript ES6, TypeScript, Bootstrap, Tailwindcss, ShadcnUi, DaisyUi ReactJS, and NextJS. 🚀 Proficient in responsive design, I'm here to assist you!
                         </p>
                         <div className="space-y-4">
@@ -36,7 +36,7 @@ export default function Contact() {
                     </div>
                     <div className="w-full lg:w-2/3 bg-gray-200 p-1 lg:p-2 rounded-tl rounded-bl lg:rounded-tl-none lg:rounded-bl-none rounded-tr rounded-br">
                         <div className="bg-white p-10 h-fit rounded-tr rounded-br">
-                            <h1 className="text-4xl text-gray-800 font-extrabold mb-6">Enter Details</h1>
+                            <h1 className="text-2xl md:text-4xl text-gray-800 font-extrabold mb-6">Enter Details</h1>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                 <div>
                                     <label className="text-gray-800 text-sm font-semibold leading-tight tracking-normal">Full Name</label>
