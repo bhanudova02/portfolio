@@ -1,18 +1,23 @@
-"use client";
-import { GrMapLocation } from "react-icons/gr";
-import { MdOutlineMail, MdPhoneInTalk } from "react-icons/md";
-import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
-import { IoClose } from "react-icons/io5";
+"use client"
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { GrMapLocation } from 'react-icons/gr';
+import { MdOutlineMail, MdPhoneInTalk } from 'react-icons/md';
+import { IoClose } from 'react-icons/io5';
+import { FaRegFaceSmileBeam } from 'react-icons/fa6';
+import { TiTickOutline } from 'react-icons/ti';
 
 export default function Contact() {
     const form = useRef<HTMLFormElement>(null);
     const [showModal, setShowModal] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         if (!form.current) return;
+
+        setIsLoading(true);
 
         try {
             const response = await emailjs.sendForm(
@@ -31,6 +36,8 @@ export default function Contact() {
             }
         } catch (error) {
             console.error("Error sending email:", error);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -73,21 +80,21 @@ export default function Contact() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                         <div>
                                             <label className="text-gray-800 text-sm font-semibold leading-tight tracking-normal">Full Name</label>
-                                            <input className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-full md:w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" type="text" placeholder="Enter Your Name" name="Full_Name" />
+                                            <input className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-full md:w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" type="text" placeholder="Enter Your Name" name="Full_Name" required />
                                         </div>
                                         <div>
                                             <label className="text-gray-800 text-sm font-semibold leading-tight tracking-normal">Email</label>
-                                            <input className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-full md:w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" type="email" placeholder="Enter Your Email" name="Email" />
+                                            <input className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-full md:w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" type="email" placeholder="Enter Your Email" name="Email" required />
                                         </div>
                                         <div>
                                             <label className="text-gray-800 text-sm font-semibold leading-tight tracking-normal">Phone</label>
-                                            <input className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-full md:w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" type="text" placeholder="+91 Enter 10 Digits" name="Phone" />
+                                            <input className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-full md:w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" type="text" placeholder="+91 Enter 10 Digits" name="Phone" required />
                                         </div>
                                     </div>
                                     <div className="mt-4">
                                         <div className="flex flex-col">
                                             <label className="text-sm font-semibold text-gray-800">Message</label>
-                                            <textarea placeholder="" className="border-gray-300 border mb-4 rounded py-2 text-sm outline-none resize-none px-3 focus:border focus:border-indigo-700" rows={5} name="Message"></textarea>
+                                            <textarea placeholder="" required className="border-gray-300 border mb-4 rounded py-2 text-sm outline-none resize-none px-3 focus:border focus:border-indigo-700" rows={5} name="Message"></textarea>
                                         </div>
                                         <button type="submit" className="focus:outline-none bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-3 text-sm leading-6">
                                             Submit
@@ -99,16 +106,25 @@ export default function Contact() {
                     </div>
                 </div>
             </form>
-            {/* Popup modal */}
+
+            {isLoading && (
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+                    <div className="w-12 h-12 border-4 border-t-transparent rounded-full animate-spin border-blue-500"></div>
+                </div>
+            )}
+
             {showModal && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-                    <div className="bg-white p-6 rounded-lg shadow-md">
-                        <h2 className="text-lg font-bold mb-4">Message Sent Successfully!</h2>
+                    <div className="bg-white px-4 text-center py-6 rounded-lg shadow-md relative w-[80%] md:w-[40%] lg:w-[25%]">
+                        <h2 className="text-base font-bold ">Message Sent Successfully </h2>
+                        <p className='text-sm '>
+                            Thanks for reaching out! I'll get back to you within the next 24 hours. <span className='text-green-600 font-bold text-xl'>&#10003;</span>
+                        </p>
                         <button
-                            className="bg-rose-500 text-white hover:cursor-pointer hover:bg-lime-400 font-bold py-2 px-3 rounded inline-flex items-center text-sm "
+                            className="bg-rose-500 absolute top-3 right-3 text-white hover:cursor-pointer hover:bg-lime-400 font-bold  rounded-full inline-flex items-center text-sm "
                             onClick={() => setShowModal(false)}
                         >
-                            Close <IoClose className="text-lg" />
+                            <IoClose className="text-lg" />
                         </button>
                     </div>
                 </div>
