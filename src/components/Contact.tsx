@@ -1,31 +1,36 @@
 "use client";
 import { GrMapLocation } from "react-icons/gr";
 import { MdOutlineMail, MdPhoneInTalk } from "react-icons/md";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { IoClose } from "react-icons/io5";
 
 export default function Contact() {
     const form = useRef<HTMLFormElement>(null);
+    const [showModal, setShowModal] = useState(false);
 
-    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (form.current) {
-            emailjs
-                .sendForm(
-                    "service_duv4p2a",
-                    "template_fk1vyqd",
-                    form.current,
-                    "VmQeCVDyitnq2OwpA"
-                )
-                .then(
-                    () => {
-                        console.log("SUCCESS!");
-                    },
-                    (error) => {
-                        console.log("FAILED...", error.text);
-                    }
-                );
+        if (!form.current) return;
+
+        try {
+            const response = await emailjs.sendForm(
+                "service_duv4p2a",
+                "template_fk1vyqd",
+                form.current,
+                "VmQeCVDyitnq2OwpA"
+            );
+
+            if (response.status === 200) {
+                console.log("SUCCESS!");
+                setShowModal(true);
+                form.current.reset();
+            } else {
+                console.log("FAILED...", response.text);
+            }
+        } catch (error) {
+            console.error("Error sending email:", error);
         }
     };
 
@@ -38,7 +43,7 @@ export default function Contact() {
                             <div className="w-full lg:w-1/3 bg-indigo-500 rounded-tr rounded-br lg:rounded-tr-none lg:rounded-br-none rounded-tl rounded-bl p-6">
                                 <h1 className="md:text-4xl text-2xl pb-4 text-white font-bold mt-4">Get in touch</h1>
                                 <p className="md:text-xl text-lg text-white pb-10 leading-relaxed font-normal lg:pr-4">
-                                    I provide front-end support with expertise in HTML5, CSS3, JavaScript ES6, TypeScript, Bootstrap, Tailwindcss, ShadcnUi, DaisyUi ReactJS, and NextJS. 🚀 Proficient in responsive design, I'm here to assist you!
+                                    I provide front-end support with expertise in HTML5, CSS3, JavaScript ES6, TypeScript, Bootstrap, Tailwindcss, ShadcnUi, DaisyUi ReactJS, and NextJS.  Proficient in responsive design, I'm here to assist you!
                                 </p>
                                 <div className="space-y-4">
                                     <div className="flex items-center">
@@ -61,21 +66,22 @@ export default function Contact() {
                                     </div>
                                 </div>
                             </div>
+
                             <div className="w-full lg:w-2/3 bg-gray-200 p-1 lg:p-2 rounded-tl rounded-bl lg:rounded-tl-none lg:rounded-bl-none rounded-tr rounded-br">
                                 <div className="bg-white p-10 h-fit rounded-tr rounded-br">
                                     <h1 className="text-2xl md:text-4xl text-gray-800 font-extrabold mb-6">Enter Details</h1>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                         <div>
                                             <label className="text-gray-800 text-sm font-semibold leading-tight tracking-normal">Full Name</label>
-                                            <input  className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-full md:w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" type="text" placeholder="" name="Full_Name" />
+                                            <input className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-full md:w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" type="text" placeholder="Enter Your Name" name="Full_Name" />
                                         </div>
                                         <div>
                                             <label className="text-gray-800 text-sm font-semibold leading-tight tracking-normal">Email</label>
-                                            <input  className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-full md:w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" type="email" placeholder="" name="Email" />
+                                            <input className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-full md:w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" type="email" placeholder="Enter Your Email" name="Email" />
                                         </div>
                                         <div>
                                             <label className="text-gray-800 text-sm font-semibold leading-tight tracking-normal">Phone</label>
-                                            <input className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-full md:w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" type="text" placeholder="" name="Phone" />
+                                            <input className="focus:outline-none focus:border focus:border-indigo-700 font-normal w-full md:w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" type="text" placeholder="+91 Enter 10 Digits" name="Phone" />
                                         </div>
                                     </div>
                                     <div className="mt-4">
@@ -93,6 +99,20 @@ export default function Contact() {
                     </div>
                 </div>
             </form>
+            {/* Popup modal */}
+            {showModal && (
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                        <h2 className="text-lg font-bold mb-4">Message Sent Successfully!</h2>
+                        <button
+                            className="bg-rose-500 text-white hover:cursor-pointer hover:bg-lime-400 font-bold py-2 px-3 rounded inline-flex items-center text-sm "
+                            onClick={() => setShowModal(false)}
+                        >
+                            Close <IoClose className="text-lg" />
+                        </button>
+                    </div>
+                </div>
+            )}
         </>
     );
 }

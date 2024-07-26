@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,13 +12,14 @@ export const metadata: Metadata = {
   description: "Showcasing projects and accomplishments under 'PORTFOLIO'.",
 };
 
-export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
+export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar/>
+        <Navbar />
         {children}
-        <Footer/>
+        <Toaster />
+        <Footer />
       </body>
     </html>
   );
