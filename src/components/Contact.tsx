@@ -94,7 +94,7 @@ export default function Contact() {
                                             <label className="text-sm font-semibold text-gray-800">Message</label>
                                             <textarea placeholder="" required className="border-gray-300 border mb-4 rounded py-2 text-sm outline-none resize-none px-3 focus:border focus:border-indigo-700" rows={5} name="Message"></textarea>
                                         </div>
-                                        <button type="submit" className="focus:outline-none bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-3 text-sm leading-6">
+                                        <button type="submit" className="focus:outline-1 outline-lime-700 bg-green-500 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-3 text-sm leading-6">
                                             Submit
                                         </button>
                                     </div>
