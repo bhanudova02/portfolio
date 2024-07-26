@@ -4,8 +4,6 @@ import emailjs from '@emailjs/browser';
 import { GrMapLocation } from 'react-icons/gr';
 import { MdOutlineMail, MdPhoneInTalk } from 'react-icons/md';
 import { IoClose } from 'react-icons/io5';
-import { FaRegFaceSmileBeam } from 'react-icons/fa6';
-import { TiTickOutline } from 'react-icons/ti';
 
 export default function Contact() {
     const form = useRef<HTMLFormElement>(null);
