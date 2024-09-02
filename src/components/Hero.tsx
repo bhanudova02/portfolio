@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ heading, message }) => {
 
   return (
     <>
-      <div className="bg-fixed bg-center bg-cover custom-img">
+      <div className="bg-fixed bg-center bg-cover bg-[url('/bg.jpg')]">
         <div className="flex items-center h-[40rem] md:h-[46rem] lg:h-[40rem] container-fluid">
           {/* Overlay */}
           <div className="absolute top-0 left-0 right-0 bottom-0  h-[40rem] md:h-[46rem] lg:h-[40rem] bg-black/70 z-[2]" />
