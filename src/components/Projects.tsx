@@ -3,31 +3,38 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Projects() {
     const projectData = [
+
         {
-            imgSrc: "/PSP_Project.png",
+            imgSrc: "/Rajesh_seeds.png",
             title: "Project One",
-            Link: "https://plpl-sedds.vercel.app/"
-        },
-        {
-            imgSrc: "/PSP_ProjectTwo.png",
-            title: "Project Two",
-            Link: "https://office-site-ebon.vercel.app/"
-        },
-        {
-            imgSrc: "/project_two.png",
-            title: "Project Three",
-            Link: "https://blog-project-nine-pink.vercel.app/"
-        },
-        {
-            imgSrc: "/UI_ComponentProject.png",
-            title: "Project Four",
-            Link: "https://ui-pages-delta.vercel.app"
+            Link: "https://rajesh-seeds.vercel.app/"
         },
         {
             imgSrc: "/project_one.png",
-            title: "Project Five",
+            title: "Project Two",
             Link: "https://ui-components-sooty.vercel.app/"
-        }
+        },
+        {
+            imgSrc: "/lawyer_project.png",
+            title: "Project Three",
+            Link: "https://lawyer-portfolio-gilt.vercel.app/"
+        },
+        {
+            imgSrc: "/PSP_ProjectTwo.png",
+            title: "Project Four",
+            Link: "https://office-site-ebon.vercel.app/"
+        },
+
+        {
+            imgSrc: "/PSP_Project.png",
+            title: "Project Five",
+            Link: "https://plpl-sedds.vercel.app/"
+        },
+        {
+            imgSrc: "/project_two.png",
+            title: "Project Six",
+            Link: "https://blog-project-nine-pink.vercel.app/"
+        },
     ]
     return (<>
         <div className="container-fluid mx-auto py-20" id="project">
