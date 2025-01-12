@@ -35,6 +35,28 @@ export default function Projects() {
             title: "Project Six",
             Link: "https://blog-project-nine-pink.vercel.app/"
         },
+        {
+            imgSrc: "/Project_Seveen.png",
+            title: "Project Seven",
+            Link: "https://zetivo.vercel.app/"
+        },
+        {
+            imgSrc: "/Project_Eight.png",
+            title: "Project Eight",
+            Link: "https://dental-clinic-ecru.vercel.app/"
+        },
+        {
+            imgSrc: "/Project_Nine.png",
+            title: "Project Nine",
+            Link: "https://photography-ruddy.vercel.app/"
+        },
+        {
+            imgSrc: "/Project_Ten.png",
+            title: "Project Ten",
+            Link: "https://ui-tasks.vercel.app/projects/shopper/shopper-template.html"
+        },
+
+        
     ]
     return (<>
         <div className="container-fluid mx-auto py-20" id="project">
